@@ -96,7 +96,7 @@
         console.log(currentScore);
         findMaxRound(player);
 
-        alert("Are you sure you wrote that well?");
+        alert("Hey, no cheating! Score can be maximum 180 points.");
 
         return;
       }
@@ -195,10 +195,13 @@
       <PlayerScoreCard playerData={player} />
     {/each}
   </div>
-  <form on:submit={saveScore}>
-    <input type="number" name="score" class="score-input" bind:value={currentScore} on:input={handleScoreChange} placeholder="Enter score" />
-    <input type="submit" value="Submit" class="submit-button" />
-  </form>
+  <div class="input-form-wrapper">
+    <form class="input-form" on:submit={saveScore}>
+      <span>Set Score Input</span>
+      <input type="number" name="score" class="score-input" bind:value={currentScore} on:input={handleScoreChange} placeholder="Enter score" />
+      <input type="submit" value="Submit" class="submit-button" />
+    </form>
+  </div>
 </main>
 
 <!-- STYLING  -->
@@ -227,5 +230,56 @@
   .submit-button,
   .score-input {
     color: #121641;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    transform: translateX(15px);
+  }
+
+  form span {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .input-form {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 100px;
+  }
+
+  .submit-button {
+    top: 150px;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    main {
+      flex-direction: column;
+      position: relative;
+      padding-bottom: 150px;
+    }
+
+    .input-form-wrapper {
+      box-sizing: border-box;
+      position: fixed;
+      bottom: 0;
+      width: 100vw;
+      left: 0;
+      align-items: center;
+      z-index: 200;
+      background-color: #121641;
+    }
+
+    form {
+      transform: translateX(0);
+      margin: auto;
+      width: 90%;
+    }
+
+    .player-scores {
+      margin: auto;
+      margin-top: 0;
+    }
   }
 </style>
