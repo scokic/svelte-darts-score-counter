@@ -197,7 +197,6 @@
   </div>
   <div class="input-form-wrapper">
     <form class="input-form" on:submit={saveScore}>
-      <span>Set Score Input</span>
       <input type="number" name="score" class="score-input" bind:value={currentScore} on:input={handleScoreChange} placeholder="Enter score" />
       <input type="submit" value="Submit" class="submit-button" />
     </form>
@@ -234,15 +233,41 @@
     color: #121641;
   }
 
+  .score-input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    padding-left: 0;
+    border-bottom: 1.5px solid white;
+    padding-bottom: 0.75rem;
+  }
+
+  .score-input::placeholder {
+    color: white;
+    transition: 0.1s ease;
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  .score-input::-webkit-outer-spin-button,
+  .score-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  .score-input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  .score-input:focus-within::placeholder {
+    color: transparent;
+  }
+
   form {
     display: flex;
     flex-direction: column;
     transform: translateX(15px);
-  }
-
-  form span {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
   }
 
   .input-form {
@@ -253,6 +278,18 @@
 
   .submit-button {
     top: 150px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    text-transform: uppercase;
+    padding: 0.75rem;
+    cursor: pointer;
+    transition: 0.15s;
+  }
+
+  .submit-button:hover {
+    color: #121641;
+    background-color: white;
   }
 
   @media only screen and (max-width: 1000px) {
