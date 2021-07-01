@@ -208,6 +208,7 @@
 <style>
   :global(body) {
     padding: 0;
+    background-color: #121641;
   }
 
   :global(*) {
@@ -225,6 +226,7 @@
 
   .player-scores {
     display: flex;
+    align-items: flex-start;
   }
 
   .submit-button,
@@ -257,12 +259,15 @@
     main {
       flex-direction: column;
       position: relative;
-      padding-bottom: 150px;
+      padding-bottom: 175px;
+      padding-top: 25px;
     }
 
     .input-form-wrapper {
       box-sizing: border-box;
       position: fixed;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
       bottom: 0;
       width: 100vw;
       left: 0;

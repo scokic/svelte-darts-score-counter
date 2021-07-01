@@ -36,6 +36,7 @@
     will-change: transform;
     transform: translateX(50%);
     transition: 0.3s ease;
+
     z-index: 100;
   }
 
@@ -66,10 +67,14 @@
   @media only screen and (max-width: 1000px) {
     .player-card {
       width: 45vw;
+      padding: 1rem 1.5rem;
     }
 
     .player-score {
       font-size: 3rem;
+    }
+    .player-info {
+      padding-bottom: 1rem;
     }
   }
 </style>
