@@ -1,7 +1,6 @@
 <script>
   export let score;
   let scoreHits = score.hits;
-  console.log(scoreHits);
 </script>
 
 <div class="table-item">

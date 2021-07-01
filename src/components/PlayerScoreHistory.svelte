@@ -12,13 +12,9 @@
     <span>Hits</span>
   </div>
   <div class="score-history-table">
-    {#if playerScore}
-      {#each playerScore as score}
-        <TableItem {score} />
-      {/each}
-    {:else}
-      <p>Start playing!</p>
-    {/if}
+    {#each playerScore as score}
+      <TableItem {score} />
+    {/each}
   </div>
 </div>
 
