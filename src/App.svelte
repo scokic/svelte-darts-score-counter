@@ -10,6 +10,25 @@
     players = data;
   });
 
+  // test api sap
+  var myHeaders = new Headers();
+  myHeaders.append("Authorization", "Basic U0NPS0lDOkFUSmQmNzlMXzlE");
+
+  var requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow",
+  };
+
+  fetch("https://zeta.sportvision.lan:44300/sap/bc/zrest_test?sap-client=250&carrid=AA", requestOptions)
+    .then((response) => JSON.stringify(response))
+    .then((result) => console.log(result))
+    .catch((error) => console.log("error", error));
+
+  // fetch("https://api.hnb.hr/tecajn/v2?format=json").then(response => response.text()).then(result => console.log(result))
+
+  // test api sap
+
   // form handler functions
 
   // find and change active player
